@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>otp</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="otp">
+            <h1 id="head" >OTP</h1>
+            <div class="result">
+                <input id="result" type="text" disabled>
+            </div>
+            <div class="button">
+                <input type="button" value="Create" id="button">
+            </div>
+        </div>
+    </div>
+    <script>
+        let result = document.getElementById("button");
+        result.addEventListener("click",function () {
+            let a = Math.floor(Math.random()*10).toString();
+            let b = Math.floor(Math.random()*10).toString();
+            let c = Math.floor(Math.random()*10).toString();
+            let d = Math.floor(Math.random()*10).toString();
+            let otp = (a + b + c + d);
+            otp = otp.padStart(4,"0");
+            document.getElementById("result").value = otp;
+            console.log(otp);
+        });
+    </script>
+</body>
+</html>
